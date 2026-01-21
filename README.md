@@ -1,98 +1,41 @@
-# IFUHWIL - I Fucked Up, Here's What I Learnt
+# IFUHWIL - Fixed Version
 
-A clean, professional blog website for sharing meaningful mistakes and lessons learned.
+## What's Fixed:
 
-## Features
+✅ **Working navigation** - Home, About, All Posts, Contact
+✅ **Clickable blog cards** - Click anywhere on a card to visit the post
+✅ **Proper link structure** - All links point to correct pages
+✅ **Placeholder pages** - About, Blog listing, and Contact pages included
 
-✅ **Clean blog layout** - Card-based design for easy reading
-✅ **No images required** - CSS gradient placeholders (easily replaceable)
-✅ **Responsive design** - Works on all devices
-✅ **Fast loading** - Minimal dependencies
-✅ **Professional typography** - Crimson Pro + Work Sans
-
-## Quick Setup for GitHub Pages
-
-### 1. Create Repository
-
-1. Go to https://github.com/new
-2. Name: `ifuhwil-site`
-3. Public repository
-4. Create repository
-
-### 2. Upload Files
-
-Upload these files:
-- `index.html`
-- `styles.css`
-- `script.js`
-- `CNAME`
-- `README.md`
-
-### 3. Enable GitHub Pages
-
-1. Repository Settings → Pages
-2. Source: **main** branch
-3. Save
-
-Live at: `https://YOUR-USERNAME.github.io/ifuhwil-site/`
-
-### 4. Custom Domain (ifuhwil.com)
-
-**In GitHub Pages settings:**
-- Enter: `ifuhwil.com`
-- Save
-
-**Update DNS at your domain provider:**
-
-**A Records:**
-```
-Type: A
-Name: @
-Value: 185.199.108.153
-
-Type: A  
-Name: @
-Value: 185.199.109.153
-
-Type: A
-Name: @
-Value: 185.199.110.153
-
-Type: A
-Name: @
-Value: 185.199.111.153
-```
-
-**CNAME Record:**
-```
-Type: CNAME
-Name: www
-Value: YOUR-USERNAME.github.io
-```
-
-Wait 5-60 minutes for DNS propagation.
-
-## File Structure
+## Structure:
 
 ```
-ifuhwil-site/
+ifuhwil-fixed/
 ├── index.html          # Homepage with featured posts
+├── about.html          # About page
+├── blog.html           # All posts listing
+├── contact.html        # Contact page
 ├── styles.css          # All styling
-├── script.js           # Smooth scrolling, mobile menu
-├── CNAME              # Custom domain
-├── README.md          # This file
-└── blog/              # Individual blog posts (create as needed)
-    ├── post1.html
-    ├── post2.html
-    └── ...
+├── script.js           # JavaScript
+├── CNAME              # Domain config
+└── posts/             # Create this folder for individual blog posts
+    ├── culture-garden.html
+    ├── first-impressions.html
+    ├── success.html
+    ├── one-more-decision.html
+    ├── reality-distortion.html
+    └── games-funding.html
 ```
 
-## Adding Blog Posts
+## Next Steps:
 
-### Create Individual Post Pages
+1. **Upload to GitHub** - Replace your current files with these
+2. **Create posts folder** - Add individual blog post HTML files
+3. **Customize content** - Update About and Contact pages with your info
 
-1. Create a `blog` folder
-2. Add HTML files for each post:
+## Creating Blog Posts:
+
+Create a `posts` folder and add HTML files like this:
 
 ```html
 <!DOCTYPE html>
@@ -101,117 +44,57 @@ ifuhwil-site/
     <meta charset="UTF-8">
     <title>Post Title | IFUHWIL</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="header-content">
             <h1 class="logo"><a href="../index.html">IFUHWIL.</a></h1>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../blog.html">All Posts</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <article class="post-content">
-        <div class="container" style="max-width: 800px; padding-top: 8rem;">
-            <h1>Your Post Title</h1>
+
+    <article style="padding: 8rem 2rem 4rem; max-width: 800px; margin: 0 auto;">
+        <h1 style="font-family: var(--font-display); font-size: 3rem; margin-bottom: 1rem;">Your Post Title</h1>
+        <div style="color: var(--color-text-light); margin-bottom: 3rem;">
+            <span>Category</span> • <span>Date</span> • <span>X min read</span>
+        </div>
+        
+        <div style="font-size: 1.1rem; line-height: 1.8;">
             <p>Your content here...</p>
+            <p>More content...</p>
         </div>
     </article>
-    
+
     <footer class="footer">
-        <!-- Footer content -->
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-logo">IFUHWIL.</h2>
+                <p class="footer-tagline">Meaningful Mistakes</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 IFUHWIL. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
 ```
 
-### Replace Placeholder Images
+## Quick Upload to GitHub:
 
-The gradient placeholders can be replaced with real images:
+1. Delete old files from your repo
+2. Upload all these new files
+3. Create a `posts` folder
+4. Add your blog post HTML files to the `posts` folder
 
-```html
-<!-- Current: -->
-<div class="placeholder-image" style="background: linear-gradient(...)"></div>
-
-<!-- Replace with: -->
-<img src="images/post-image.jpg" alt="Post title" style="width: 100%; height: 100%; object-fit: cover;">
-```
-
-## Customization
-
-### Colors
-
-Edit `styles.css`:
-```css
-:root {
-    --color-primary: #2d3748;
-    --color-accent: #667eea;
-    /* Change these to your brand colors */
-}
-```
-
-### Typography
-
-Currently using:
-- **Display**: Crimson Pro (elegant serif for headlines)
-- **Body**: Work Sans (clean sans-serif)
-
-Change in `index.html` Google Fonts link and `styles.css` font variables.
-
-### Blog Posts
-
-Update the blog cards in `index.html` with your actual posts:
-- Change titles
-- Update dates
-- Modify categories
-- Link to actual blog post pages
-
-## Current Posts (from your Framer site)
-
-1. **Cultural garden** - Culture - Aug 8, 2024
-2. **First impressions** - Reputation - Oct 16, 2024
-3. **Success** - Culture - Nov 23, 2024
-4. **One more decision** - Product - Dec 6, 2024
-5. **Reality distortion fields** - Reputation - Jan 15, 2025
-6. **Games Funding** - Finance - Sep 19, 2025
-
-## Design Philosophy
-
-- **Clean & Readable** - Focus on content
-- **Professional** - Serious blog, not playful
-- **Fast** - Minimal dependencies
-- **Accessible** - Good contrast, readable fonts
-
-## Browser Support
-
-- ✅ Chrome/Edge (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Mobile browsers
-
-## Going Live Checklist
-
-- [ ] Create GitHub repository
-- [ ] Upload all files
-- [ ] Enable GitHub Pages
-- [ ] Add custom domain
-- [ ] Update DNS records
-- [ ] Test site
-- [ ] Create individual blog post pages
-- [ ] Add actual blog content
-
-## Future Enhancements
-
-Optional improvements you could add:
-- RSS feed
-- Search functionality
-- Blog post categories/tags page
-- Archive page
-- Newsletter signup
-- Social sharing buttons
-
-## Support
-
-Questions? Email: (add your contact)
-
----
-
-© 2024 IFUHWIL. All Rights Reserved.
+That's it!
